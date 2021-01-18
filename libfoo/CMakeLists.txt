@@ -8,14 +8,14 @@ add_library(${PROJECT_NAME} SHARED ${SOURCES})
 target_include_directories(${PROJECT_NAME} PUBLIC include)
 
 # Dependencies
-#set(LIB_DEPENDS common error usbwrap buffer fx2loader)
+#set(LIB_DEPENDS bar baz)
 #target_link_libraries(${PROJECT_NAME} PUBLIC ${LIB_DEPENDS})
 
 # What to install
 install(TARGETS ${PROJECT_NAME}
-  RUNTIME DESTINATION bin
-  LIBRARY DESTINATION bin
-  ARCHIVE DESTINATION bin
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 install(
   DIRECTORY include DESTINATION include
