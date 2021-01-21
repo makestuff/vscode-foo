@@ -6,8 +6,8 @@
         {
             "label": "cmake",
             "type": "shell",
-            "command": "rm -rf build; mkdir build; cd build; cmake -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=0 -DCMAKE_VERBOSE_MAKEFILE=1 -DCMAKE_INSTALL_PREFIX=../install -DCMAKE_INSTALL_RPATH=\\$ORIGIN -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ..",
-            "problemMatcher": ["$gcc"],
+            "command": "rm -rf build; mkdir build; cd build; cmake -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=1 -DCMAKE_VERBOSE_MAKEFILE=1 -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_INSTALL_RPATH=\\$ORIGIN/../lib -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ..",
+            "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -17,7 +17,7 @@
             "label": "build",
             "type": "shell",
             "command": "cmake --build build",
-            "problemMatcher": [],
+            "problemMatcher": ["$gcc"],
             "group": {
                 "kind": "build",
                 "isDefault": true
