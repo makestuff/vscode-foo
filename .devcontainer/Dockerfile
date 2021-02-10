@@ -9,5 +9,5 @@ RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
 RUN apt-get update
 RUN apt-get -y install --no-install-recommends clangd-12 libusb-1.0-0-dev python3-jsmin
 RUN \
-  wget -O /usr/local/bin/setup-container.py http://makestuff.de/extensions/setup-container.py && \
+  wget -qO /usr/local/bin/setup-container.py http://makestuff.de/extensions/setup-container.py && \
   chmod 755 /usr/local/bin/setup-container.py
