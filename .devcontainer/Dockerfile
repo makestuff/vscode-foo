@@ -3,8 +3,11 @@ ARG VARIANT=buster
 FROM mcr.microsoft.com/vscode/devcontainers/cpp:dev-${VARIANT}
 
 # [Optional] Uncomment this section to install additional packages.
-RUN echo "deb http://apt.llvm.org/buster/ llvm-toolchain-buster-11 main"     >> /etc/apt/sources.list
-RUN echo "deb-src http://apt.llvm.org/buster/ llvm-toolchain-buster-11 main" >> /etc/apt/sources.list
+RUN echo "deb http://apt.llvm.org/buster/ llvm-toolchain-buster-12 main"     >> /etc/apt/sources.list
+RUN echo "deb-src http://apt.llvm.org/buster/ llvm-toolchain-buster-12 main" >> /etc/apt/sources.list
 RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
 RUN apt-get update
-RUN apt-get -y install --no-install-recommends clangd-11 libusb-1.0-0-dev
+RUN apt-get -y install --no-install-recommends clangd-12 libusb-1.0-0-dev python3-jsmin
+RUN \
+  wget -O /usr/local/bin/setup-container.py http://makestuff.de/extensions/setup-container.py && \
+  chmod 755 /usr/local/bin/setup-container.py

@@ -18,7 +18,7 @@
 
         "C_Cpp.errorSquiggles": "Disabled",
         "C_Cpp.intelliSenseEngine": "Disabled",
-        "clangd.path": "/usr/bin/clangd-11",
+        "clangd.path": "/usr/bin/clangd-12",
         "clangd.onConfigChanged": "restart",
         "clangd.arguments": [
             "--query-driver=*",
